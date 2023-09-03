@@ -1,8 +1,8 @@
-import Button from "@/components/Button";
-import Input from "@/components/Input";
+import {MainBoxType} from "@/types";
 
-export default function MainBox() {
-  return <div className="main-box flex-between">
+
+export default function MainBox(props: MainBoxType) {
+  return <div className="box main-box flex-between">
     <div className="left">
       <h1>Stay updated!</h1>
       <p>
@@ -13,7 +13,7 @@ export default function MainBox() {
         <li>Measuring to ensure updates are a success</li>
         <li>And much more!</li>
       </ul>
-      <Input/>
+      {props.input}
     </div>
     <div className="right">
       <div className="img"></div>

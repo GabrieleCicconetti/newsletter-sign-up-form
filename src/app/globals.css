@@ -22,15 +22,16 @@ body {
 main {
   min-height: 100vh;
   padding: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .main-box {
   width: 100%;
   max-width: 930px;
+}
+
+.box {
   background-color: #fff;
+  margin: auto;
   border-radius: 2rem;
   box-shadow: 0 0 30px 20px var(--dark-slate-grey);
 }
@@ -51,7 +52,8 @@ h1 {
   font-weight: 700;
   color: var(--dark-slate-grey);
   font-size: 3.4rem;
-  margin: 0
+  margin: 0;
+  line-height: 1;
 }
 
 p {
@@ -74,8 +76,7 @@ li:before {
   content: '';
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   width: 1.2em;
   height: 1.2em;
   background-position: center center;
@@ -165,6 +166,12 @@ button:hover {
   justify-content: space-between;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .error-label {
   color: var(--tomato)
 }
@@ -174,6 +181,15 @@ input.error-state {
   color: var(--tomato);
   opacity: 1;
   background-color: hsla(4, 100%, 67%, 0.13);
+}
+
+.ty {
+  max-width: 500px;
+  padding: 3rem 3.5rem;
+}
+
+.ty h1 {
+  margin-top: .6em
 }
 
 @media all and (max-width: 940px) {
@@ -191,7 +207,7 @@ input.error-state {
   .left {
     order: 2;
     width: 100%;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .right {
@@ -220,16 +236,52 @@ input.error-state {
     border-top-right-radius: 0;
   }
 
-  .left {
-    padding: 2rem;
+  .left, .ty.box {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .ty.box {
+    height: 100vh;
+    padding-top: 50%
+  }
+
+  .ty.box button {
+    position: absolute;
+    bottom: 40px;
+    left: 2rem;
+    width: calc(100% - 4rem);
+    margin: auto;
+    display: block;
   }
 
   .main-box {
     max-width: 100%;
+  }
+
+  .box {
     border-radius: 0;
   }
 
   h1 {
     font-size: 2.5rem;
+  }
+}
+
+@media all and (max-width: 480px) and (max-height: 760px) {
+  .ty.box {
+    padding-top: 3rem;
+  }
+}
+
+
+@media all and (max-width: 480px) and (max-height: 460px) {
+  .ty.box button {
+    position: relative;
+    left: auto;
+    width: 100%;
+    bottom: auto;
+  }
+  .ty.box {
+    height: auto;
   }
 }

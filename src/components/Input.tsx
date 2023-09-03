@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import {useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
+import {InputType} from "@/types";
 
 const checkEmail = (email: string) => {
   const at = email.split('@')
@@ -9,10 +10,9 @@ const checkEmail = (email: string) => {
   }
   const domain = at[1].split('.')
   return domain.length === 2;
-
 }
 
-export default function Input() {
+export default function Input(props: InputType) {
   const [val, setVal] = useState("")
   const [error, setError] = useState(false)
 
@@ -40,6 +40,7 @@ export default function Input() {
         setError(true)
         return
       }
+      props.onSuccess(val)
     }} text="Subscribe to monthly newsletter"/>
   </div>
 }

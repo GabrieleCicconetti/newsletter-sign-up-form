@@ -1,10 +1,8 @@
 import React, {ComponentProps} from "react";
+import {ButtonType} from "@/types";
 
-type IButton = {
-  text: string
-} & React.HTMLProps<HTMLButtonElement>
 
-export default function Button(props: IButton) {
+export default function Button(props: ButtonType) {
   const {text, ...buttonProps} = props
 
   return <button
