@@ -1,7 +1,10 @@
+'use client'
+import MainBox from "@/components/MainBox";
+
 export default function Home() {
   return (
-    <main>
-
-    </main>
+      <main>
+        <MainBox/>
+      </main>
   )
 }
